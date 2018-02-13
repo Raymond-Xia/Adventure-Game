@@ -164,14 +164,14 @@ public class Adventure {
         /* Create rooms */
         tiles = new ImageIcon[9];
         tiles[0] = null;
-        tiles[1] = new ImageIcon("treeB.png");
-        tiles[2] = new ImageIcon("treeT.png");
-        tiles[3] = new ImageIcon("treeBL.png");
-        tiles[4] = new ImageIcon("treeBR.png");
-        tiles[5] = new ImageIcon("treeTL.png");
-        tiles[6] = new ImageIcon("treeTR.png");
-        tiles[7] = new ImageIcon("jeff.png");
-        tiles[8] = new ImageIcon("yeet.png");
+        tiles[1] = new ImageIcon("img/treeB.png");
+        tiles[2] = new ImageIcon("img/treeT.png");
+        tiles[3] = new ImageIcon("img/treeBL.png");
+        tiles[4] = new ImageIcon("img/treeBR.png");
+        tiles[5] = new ImageIcon("img/treeTL.png");
+        tiles[6] = new ImageIcon("img/treeTR.png");
+        tiles[7] = new ImageIcon("img/jeff.png");
+        tiles[8] = new ImageIcon("img/yeet.png");
         
         level = new Room[1][4];      
         
@@ -243,21 +243,21 @@ public class Adventure {
         
         /* Create characters */        
         walkIcons = new ImageIcon[][] {
-            {new ImageIcon("walkL1.png"), new ImageIcon("walkL2.png")},
-            {new ImageIcon("walkR1.png"), new ImageIcon("walkR2.png")},
+            {new ImageIcon("img/walkL1.png"), new ImageIcon("img/walkL2.png")},
+            {new ImageIcon("img/walkR1.png"), new ImageIcon("img/walkR2.png")},
         };        
         walkCount = 0;
         
         yeetIcons = new ImageIcon[][] {
-            {new ImageIcon("yeetL1.png"), new ImageIcon("yeetL2.png"), new ImageIcon("yeetL3.png")},
-            {new ImageIcon("yeetR1.png"), new ImageIcon("yeetR2.png"), new ImageIcon("yeetR3.png")},
+            {new ImageIcon("img/yeetL1.png"), new ImageIcon("img/yeetL2.png"), new ImageIcon("img/yeetL3.png")},
+            {new ImageIcon("img/yeetR1.png"), new ImageIcon("img/yeetR2.png"), new ImageIcon("img/yeetR3.png")},
         };
         yeetCount = 0;
         timeYeet = new Timer(250, new YeetListener());        
         
         yeetKid = new Player(WIDTH/2, HEIGHT/2, true, 0, walkIcons[1][0]);
                 
-        crackKidIcons = new ImageIcon[]{new ImageIcon("crackKidL.png"), new ImageIcon("crackKidR.png")};
+        crackKidIcons = new ImageIcon[]{new ImageIcon("img/crackKidL.png"), new ImageIcon("img/crackKidR.png")};
         crackKid = new Player(WIDTH/2,HEIGHT/2, false, 1, crackKidIcons[0]);
         crackKidStep = new Timer(1000, new CrackKidListener());
         crackKidStep.setRepeats(true);
