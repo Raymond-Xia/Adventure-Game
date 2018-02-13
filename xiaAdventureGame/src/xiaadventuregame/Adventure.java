@@ -9,10 +9,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.io.*;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
-import javax.sound.sampled.*;
 
 /**
  *
@@ -496,23 +494,6 @@ public class Adventure {
                         break;
                     case KeyEvent.VK_SPACE:
                         if (yeetKid.getItem(0) != null && yeetKid.getItem(0).isObtained()) {
-//                            try {
-//                                // Open an audio input stream.
-//                                URL url = this.getClass().getResource("yeet.wav");
-//                                AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
-//                                // Get a sound clip resource.
-//                                Clip clip = AudioSystem.getClip();
-//                                // Open audio clip and load samples from the audio input stream.
-//                                clip.open(audioIn);
-//                                clip.start();
-//                            } catch (UnsupportedAudioFileException ex) {
-//                                ex.printStackTrace();
-//                            } catch (IOException ex) {
-//                                ex.printStackTrace();
-//                            } catch (LineUnavailableException ex) {
-//                                ex.printStackTrace();
-//                            }
-
                             if (!timeYeet.isRunning()) {
                                 timeYeet.start();
                             }
@@ -559,7 +540,6 @@ public class Adventure {
                         if (yeetKid.getX() - 1 == crackKid.getX() && yeetKid.getY() == crackKid.getY() && crackKid.isVisible()) {
                             crackKidStep.stop();
                             crackKid.setAlive(false);
-                            currentRoom.getMap()[0][WIDTH/2] = 0;
                         }
                     } else if (yeetKid.getDirection() == 1 && yeetKid.getX() < WIDTH - 1) {  
                         if (currentRoom.getMap()[yeetKid.getY()][yeetKid.getX()+1] > 6) {
@@ -569,7 +549,6 @@ public class Adventure {
                         if (yeetKid.getX() + 1 == crackKid.getX() && yeetKid.getY() == crackKid.getY() && crackKid.isVisible()) {
                             crackKidStep.stop();
                             crackKid.setAlive(false);
-                            currentRoom.getMap()[0][WIDTH/2] = 0;
                         }
                     }
                 }
@@ -619,7 +598,9 @@ public class Adventure {
                             yeetKid.setAlive(false);
                         }
                     }
-                } 
+                } else {
+                    endGame();
+                }
             } else {
                 endGame();              
             }
